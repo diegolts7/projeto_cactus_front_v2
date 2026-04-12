@@ -7,10 +7,13 @@ export default function AppLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Cabecalho />
-      {children}
+    <div className="flex flex-col ">
+      <div className="min-h-screen">
+        <Cabecalho />
+        <main>{children}</main>
+      </div>
+
       <Footer />
-    </>
+    </div>
   );
 }
