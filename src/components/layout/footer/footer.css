@@ -15,14 +15,12 @@
 }
 
 .footer.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 10%;
-}
-
-.footer-informacoes,
-.footer-contato {
-  margin-bottom: 30px;
 }
 
 .footer-bg h3 {
@@ -50,8 +48,8 @@
 
 .topo-membro {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 3px;
 }
 
 .cargo {
@@ -90,16 +88,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.footer-contato {
-  padding-left: 0;
-}
-
-@media (min-width: 700px) {
-  .footer-contato {
-    padding-left: 50px;
-  }
 }
 
 .footer-informacoes li,
