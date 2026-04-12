@@ -1,5 +1,5 @@
 .footer-bg {
-  background-color: #ef8732ef;
+  background-color: var(--color-primary);
   color: #1d1b20;
   padding: 50px 0 30px;
 }
@@ -55,7 +55,7 @@
 .cargo {
   font-weight: bold;
   font-size: 0.9rem;
-  color: #000;
+  color: var(--color-secondary);
   text-transform: uppercase;
 }
 
@@ -71,13 +71,13 @@
   padding: 2px 8px;
   border-radius: 4px;
   text-decoration: none;
-  color: #000;
+  color: var(--color-secondary);
   transition: 0.3s;
 }
 
 .link-lattes:hover {
   background-color: #fff;
-  color: #ef8732;
+  color: var(--color-ring);
   text-decoration: none;
 }
 
@@ -87,6 +87,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 10px;
 }
 

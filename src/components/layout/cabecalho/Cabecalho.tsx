@@ -14,10 +14,10 @@ export default function Cabecalho() {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="#conteudoInit">Sobre Nós</Link>
+              <Link href="/#conteudoInit">Sobre Nós</Link>
             </li>
             <li>
-              <Link href="#contato">Contato</Link>
+              <Link href="/#contato">Contato</Link>
             </li>
             <li>
               <Link href="/admin">Admin</Link>

@@ -1,52 +1,66 @@
 "use client";
+
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import "./projetos.css";
+import { useState } from "react";
+import { VisuallyHidden } from "radix-ui";
+import projetos from "../../../../data/projetos.json";
 
 export default function Projetos() {
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  const mudarImagem = (direction: number, totalImgs: number) => {
+    setCurrentImgIndex((prev) => {
+      const nextIndex = prev + direction;
+
+      if (nextIndex >= totalImgs) return 0;
+      if (nextIndex < 0) return totalImgs - 1;
+
+      return nextIndex;
+    });
+  };
+
   return (
     <section className="projetos">
       <h3>Nossos projetos</h3>
+
       <div className="container-projetos">
-        <div
-          className="projetosCards"
-          //  onclick="openModal(
-          //      ['img/projetos/modeloATHIS4.png', 'img/projetos/modeloATHIS1.png','img/projetos/modeloATHIS2.png','img/projetos/modeloATHIS3.png' ],
-          //      'Escritório modelo ATHIS e Canteiro Escola',
-          //      'Bioconstrução',
-          //      'Ambiente pedagógico de experimentação prática de técnicas construtivas de baixo impacto ambiental e prestação de serviços de assistência técnica para habitação de interesse social rural e urbana à famílias com renda de até três salários mínimos.'
-          //  )"
-        >
-          <img src="img/projetos/modeloATHIS4.png" alt="Exemplo de projeto" />
-          <span className="tipoProject">Bioconstrução</span>
-          <p>Escritório modelo ATHIS e Canteiro Escola</p>
-        </div>
+        {projetos.map((projeto) => (
+          <Dialog key={projeto.id}>
+            <DialogTrigger asChild>
+              <div className="projetosCards">
+                <img src={projeto.capa} alt={projeto.titulo} />
+                <span className="tipoProject">{projeto.categoria}</span>
+                <p>{projeto.titulo}</p>
+              </div>
+            </DialogTrigger>
 
-        <div
-          className="projetosCards"
-          //  onclick="openModal(
-          //      ['img/projetos/CSA1.png','img/projetos/CSA2.png','img/projetos/CSA3.png','img/projetos/CSA4.png'],
-          //      'Comunidade que sustenta agricultura - CSA Cajazeiras',
-          //      'Agroecologia',
-          //      'Famílias da cidade que se tornam co-agricultores dando apoio à produção agroecológica de agricultores familiares de Cajazeiras que semanalmente trazem uma cesta de produtos de época livres de agrotóxicos para as famílias que deram suporte a sua produção.'
-          //  )"
-        >
-          <img src="img/projetos/CSA4.png" alt="Exemplo de projeto" />
-          <span className="tipoProject">Agroecologia</span>
-          <p>Comunidade que sustenta agricultura - CSA Cajazeiras</p>
-        </div>
+            <DialogContent className="modal-content">
+              <VisuallyHidden.Root>
+                <DialogTitle>{projeto.titulo}</DialogTitle>
+                <DialogDescription>{projeto.descricao}</DialogDescription>
+              </VisuallyHidden.Root>
 
-        <div
-          className="projetosCards"
-          //  onclick="openModal(
-          //      ['img/projetos/plastico1.png','img/projetos/plastico2.png','img/projetos/plastico3.png','img/projetos/plastico4.png'],
-          //      'Plastico Precioso Cajazeiras',
-          //      'Economia comunitária',
-          //      'Comunidade de recicladores de plásticos que faz parte da comunidade global Precious Plastic que dá autonomia aos cidadãos produzirem produtos feitos dos plásticos reciclados através de pequenas máquinas de trituração e modelagem que podem ser montadas pela própria comunidade.  '
-          //  )"
-        >
-          <img src="img/projetos/plastico2.png" alt="Exemplo de projeto" />
-          <span className="tipoProject">Economia comunitária</span>
-          <p>Plastico Precioso Cajazeiras</p>
-        </div>
+              <div className="carousel-container">
+                <button className="carousel-btn prev" onClick={() => mudarImagem(-1, projeto.imgs.length)}>
+                  &#10094;
+                </button>
+
+                <img className="modal-img" src={projeto.imgs[currentImgIndex]} alt="Imagem do Projeto" />
+
+                <button className="carousel-btn next" onClick={() => mudarImagem(+1, projeto.imgs.length)}>
+                  &#10095;
+                </button>
+              </div>
+
+              <div className="modal-body">
+                <span className="tipoProject modal-specialty">{projeto.categoria}</span>
+                <h3 className="modal-title">{projeto.titulo}</h3>
+                <p className="modal-description">{projeto.descricao}</p>
+              </div>
+            </DialogContent>
+          </Dialog>
+        ))}
       </div>
     </section>
   );

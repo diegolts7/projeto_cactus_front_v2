@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  background-color: #ef8732ef;
+  background-color: var(--color-primary);
 }
 
 .nav-bar {
@@ -24,11 +24,11 @@ nav {
   text-decoration: none;
   font-weight: bold;
   font-size: large;
-  color: black;
+  color: var(--color-secondary);
 }
 
 .lista-nav a:hover {
-  color: #fffffff4;
+  color: var(--color-background);
   transition: color 0.5s ease;
 }
 

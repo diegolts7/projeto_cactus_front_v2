@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-contato">
-            <h3 className="contato">Redes Sociais</h3>
+            <h3>Redes Sociais</h3>
             <ul className="redes">
               <li>
                 <img src="img/instagram.svg" alt="Instagram" />
@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-contato">
-            <h3 className="contato">Contato</h3>
+            <h3>Contato</h3>
             <ul className="redes">
               <li>
                 <img src="img/zapIcon.png" alt="whatsapp" />

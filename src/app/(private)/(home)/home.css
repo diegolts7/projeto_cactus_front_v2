@@ -18,7 +18,7 @@
 .apresentacao h2 {
   font-size: 2em;
   font-weight: bold;
-  color: #333;
+  color: var(--foreground);
   margin: 0;
   margin-bottom: 10px;
 }
@@ -27,12 +27,12 @@
   font-size: 1.2em;
   margin-top: 5px;
   margin-bottom: 0;
-  color: #333;
+  color: var(--foreground);
   font-weight: normal;
 }
 
 .destaque {
-  color: #ef8732ef;
+  color: var(--color-primary);
   font-weight: bold;
 }
 
@@ -45,12 +45,12 @@
 .conteudoInit h3 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--foreground);
 }
 
 .conteudoInit p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--second-foreground);
   margin-bottom: 40px;
 }
 
@@ -63,7 +63,7 @@
 
 .especialidade {
   background-color: #f8decb86;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   padding: 30px 20px;
   width: 240px;
@@ -85,7 +85,7 @@
 .especialidade .tituloCard {
   font-weight: bold;
   font-size: 1.2rem;
-  color: #ef8732ef;
+  color: var(--color-primary);
   margin-bottom: 15px;
   display: block;
 }
@@ -98,18 +98,18 @@
 }
 
 /* --- OBJETIVOS --- */
-#objetivos {
+.objetivos {
   padding: 60px 10%;
   text-align: center;
-  background-color: #ef8732ef;
+  background-color: var(--color-primary);
 }
 
-#objetivos h3 {
+.objetivos h3 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
-#objetivos .subtitulo {
+.objetivos .subtitulo {
   color: #000000df;
   margin-bottom: 50px;
 }
@@ -154,22 +154,22 @@
   color: #ffffff;
 }
 
-#contato {
+.contato {
   padding: 30px 10%;
   text-align: center;
 }
 
-#contato h3 {
+.contato h3 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
-#contato p {
-  color: #666;
+.contato p {
+  color: var(--second-foreground);
   margin-bottom: 40px;
 }
 
-#form-contato {
+.form-contato {
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
@@ -183,7 +183,7 @@
   display: block;
   font-weight: bold;
   margin-bottom: 8px;
-  color: #333;
+  color: var(--foreground);
 }
 
 .campo input,
@@ -204,7 +204,7 @@
 .campo input:focus,
 .campo textarea:focus {
   outline: none;
-  border-color: #ef8732ef;
+  border-color: var(--color-primary);
   box-shadow: 0 0 5px rgba(239, 135, 50, 0.3);
 }
 
@@ -214,19 +214,18 @@
 }
 
 .btn-enviar {
-  background-color: #ef8732ef;
-  color: #000000;
-  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
   padding: 15px 50px;
   font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   border-radius: 5px;
-  cursor: pointer;
   transition: 0.3s;
 }
 
 .btn-enviar:hover {
-  background-color: #d67629;
+  background-color: var(--color-ring);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }

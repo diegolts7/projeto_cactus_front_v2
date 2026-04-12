@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Projetos from "./_components/_projetos";
 import "./home.css";
 
@@ -48,7 +49,7 @@ export default function Home() {
 
       <Projetos />
 
-      <section id="objetivos">
+      <section className="objetivos">
         <h3>O que queremos?</h3>
         <p className="subtitulo">Esses são alguns dos principais objetivos do Cactus</p>
 
@@ -80,7 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contato">
+      <section className="contato" id="contato">
         <h3>Quer falar com a gente?</h3>
         <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
 
@@ -90,6 +91,7 @@ export default function Home() {
           method="post"
           encType="text/plain"
           id="form-contato"
+          className="form-contato"
         >
           <div className="campo">
             <label htmlFor="nome">Nome Completo</label>
