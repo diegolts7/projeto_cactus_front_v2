@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import Projetos from "./_components/_projetos";
+import FormContato from "./_components/form_contato/_formContato";
+import Projetos from "./_components/projetos/_projetos";
 import "./home.css";
 
 export default function Home() {
@@ -85,35 +85,7 @@ export default function Home() {
         <h3>Quer falar com a gente?</h3>
         <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
 
-        <form
-          action="mailto:cactus.cz@ifpb.edu.br"
-          target="_blank"
-          method="post"
-          encType="text/plain"
-          id="form-contato"
-          className="form-contato"
-        >
-          <div className="campo">
-            <label htmlFor="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
-          </div>
-
-          <div className="campo">
-            <label htmlFor="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required />
-          </div>
-
-          <div className="campo">
-            <label htmlFor="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows={5} placeholder="Como podemos ajudar?" required></textarea>
-          </div>
-
-          <div className="container-btn">
-            <button type="submit" className="btn-enviar">
-              Enviar Mensagem
-            </button>
-          </div>
-        </form>
+        <FormContato />
       </section>
     </>
   );
