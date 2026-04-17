@@ -1,0 +1,128 @@
+.footer-bg {
+  background-color: var(--color-primary);
+  color: #1d1b20;
+  padding: 50px 0 30px;
+}
+
+.footer-bg a {
+  color: #1d1b20;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-bg a:hover {
+  text-decoration: underline;
+}
+
+.footer.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+.footer-bg h3 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.lista-equipe {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.membro-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  gap: 6px;
+}
+
+.membro-item:last-child {
+  border-bottom: none;
+}
+
+.topo-membro {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.cargo {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+}
+
+.nome-membro {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.link-lattes {
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--color-secondary);
+  transition: 0.3s;
+}
+
+.link-lattes:hover {
+  background-color: #fff;
+  color: var(--color-ring);
+  text-decoration: none;
+}
+
+.footer-informacoes ul:not(.lista-equipe),
+.footer-contato ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.footer-informacoes li,
+.footer-contato li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.footer-contato img,
+.footer-bottom img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.footer-bottom .logo {
+  width: 40px;
+  height: auto;
+}
+
+.footer-bg hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid rgba(29, 27, 32, 0.3);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.9rem;
+}
