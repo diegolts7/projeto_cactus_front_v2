@@ -107,6 +107,7 @@
 .objetivos h3 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: var(--color-secondary);
 }
 
 .objetivos .subtitulo {

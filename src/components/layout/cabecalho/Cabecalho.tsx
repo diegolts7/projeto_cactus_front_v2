@@ -19,9 +19,6 @@ export default function Cabecalho() {
             <li>
               <Link href="/#contato">Contato</Link>
             </li>
-            <li>
-              <Link href="/admin">Admin</Link>
-            </li>
           </ul>
         </nav>
       </div>
