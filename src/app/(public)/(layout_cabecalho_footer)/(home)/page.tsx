@@ -4,7 +4,7 @@ import "./home.css";
 
 export default function Home() {
   return (
-    <>
+    <main className="font-[ErasBold,Arial]">
       <section className="apresentacao" id="apresentacao">
         <div className="flex justify-center">
           <img src="img/CactusApresentacao.png" alt="Apresentação Cactus" className="cactus-apresentacao" />
@@ -87,6 +87,6 @@ export default function Home() {
 
         <FormContato />
       </section>
-    </>
+    </main>
   );
 }
