@@ -93,7 +93,7 @@
 .especialidade p {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #555;
+  color: var(--gray);
   margin-bottom: 0;
 }
 
@@ -107,11 +107,11 @@
 .objetivos h3 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: var(--color-secondary);
+  color: var(--dark);
 }
 
 .objetivos .subtitulo {
-  color: #000000df;
+  color: var(--secondary-foreground);
   margin-bottom: 50px;
 }
 
@@ -166,7 +166,7 @@
 }
 
 .contato p {
-  color: var(--second-foreground);
+  color: var(--secondary-foreground);
   margin-bottom: 40px;
 }
 
@@ -175,6 +175,6 @@
     display: none;
   }
   .objetivos-itens {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border);
   }
 }
