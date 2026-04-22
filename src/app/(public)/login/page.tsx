@@ -37,7 +37,7 @@ export default function Login() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
-          <div className="bg-[#F4883080] rounded-sm p-8 shadow-lg">
+          <div className="bg-(--primary-dark) rounded-sm p-8 shadow-lg">
             <h1 className="text-3xl font-bold text-gray-900 text-center mb-8">Login Administrador</h1>
 
             <form onSubmit={handleSubmit}>
@@ -67,7 +67,7 @@ export default function Login() {
                 </FieldGroup>
 
                 <Field orientation="horizontal">
-                  <ButtonCustom size="lg" type="submit" title="Fazer login">
+                  <ButtonCustom size="lg" type="submit" title="Fazer login" className="hover:opacity-80">
                     ENTRAR
                   </ButtonCustom>
                 </Field>

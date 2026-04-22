@@ -39,18 +39,18 @@ export default function middleware(request: NextRequest) {
   }
 
   if (authToken && !publicRoute) {
-    try {
-      const decoded = jwtDecode<TokenPayload>(authToken.value);
-      const now = Date.now() / 1000;
-
-      if (decoded.exp < now) {
-        throw new Error("Token expirado");
-      }
-    } catch {
-      const res = NextResponse.redirect(new URL(REDIRECT_WHEN_NOT_AUTHENTICATED, request.url));
-      res.cookies.delete("token");
-      return res;
-    }
+    // Por enquanto que não integro com a autenticação na API com JWT
+    //   try {
+    //     const decoded = jwtDecode<TokenPayload>(authToken.value);
+    //     const now = Date.now() / 1000;
+    //     if (decoded.exp < now) {
+    //       throw new Error("Token expirado");
+    //     }
+    //   } catch {
+    //     const res = NextResponse.redirect(new URL(REDIRECT_WHEN_NOT_AUTHENTICATED, request.url));
+    //     res.cookies.delete("token");
+    //     return res;
+    //   }
   }
 
   return NextResponse.next();

@@ -1,15 +1,16 @@
 "use client";
 import Link from "next/link";
 import "./cabecalho.css";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Cabecalho() {
   const pathName = usePathname();
+  const router = useRouter();
 
   const paletaCoresConformePath =
     pathName === "/"
-      ? { headerClass: "header-primary", colorItemDestaque: "text-[var(--color-secondary)]" }
-      : { headerClass: "header-secondary", colorItemDestaque: "text-[var(--color-primary)]" };
+      ? { headerClass: "header-primary", colorItemDestaque: "text-(--color-secondary)" }
+      : { headerClass: "header-secondary", colorItemDestaque: "text-(--color-primary)" };
 
   const destacarItem = (path: string) => {
     if (path === pathName) return paletaCoresConformePath.colorItemDestaque;
@@ -18,30 +19,32 @@ export default function Cabecalho() {
   };
 
   return (
-    <header className={paletaCoresConformePath.headerClass}>
+    <header className={`${paletaCoresConformePath.headerClass} transition-colors`}>
       <div className="nav-bar">
         <Link href="/" className="logo">
           <img src="img/CactusLogo.png" alt="Logo Cactus" className="logo-img" />
         </Link>
         <nav>
           <ul className="lista-nav">
-            <li>
-              <Link href="/" className={destacarItem("/")}>
-                Home
-              </Link>
+            <li onClick={() => router.push("/")} className={`nav-item ${destacarItem("/")}`} title="Pagina inicial">
+              <span className="nav-text">Home</span>
             </li>
-            <li>
-              <Link href="/#contato">Contato</Link>
+            <li className="nav-item" onClick={() => router.push("/#contato")} title="Área de contato">
+              <span className="nav-text">Contato</span>
             </li>
-            <li>
-              <Link href="/blog" className={destacarItem("/blog")}>
-                Blog
-              </Link>
+            <li
+              onClick={() => router.push("/blog")}
+              className={`nav-item ${destacarItem("/blog")}`}
+              title="Blog de postagens"
+            >
+              <span className="nav-text">Blog</span>
             </li>
-            <li>
-              <Link href="/dashboard" className={destacarItem("/dashboard")}>
-                Dashboard
-              </Link>
+            <li
+              onClick={() => router.push("/dashboard")}
+              className={`nav-item ${destacarItem("/dashboard")}`}
+              title="Dashboard informativo"
+            >
+              <span className="nav-text">Dashboard</span>
             </li>
           </ul>
         </nav>
