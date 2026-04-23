@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } 
 import "./projetos.css";
 import { useState } from "react";
 import { VisuallyHidden } from "radix-ui";
-import projetos from "../../../../../../data/projetos.json";
+import projetos from "@/src/data/projetos.json";
 
 export default function Projetos() {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);

@@ -20,9 +20,9 @@ export default function Cabecalho() {
 
   return (
     <header className={`${paletaCoresConformePath.headerClass} transition-colors`}>
-      <div className="nav-bar">
+      <div className="container-principal nav-bar">
         <Link href="/" className="logo">
-          <img src="img/CactusLogo.png" alt="Logo Cactus" className="logo-img" />
+          <img src="/img/CactusLogo.png" alt="Logo Cactus" className="logo-img" />
         </Link>
         <nav>
           <ul className="lista-nav">

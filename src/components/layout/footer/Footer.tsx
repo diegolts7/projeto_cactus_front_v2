@@ -4,7 +4,7 @@ import "./footer.css";
 export default function Footer() {
   return (
     <footer className="footer-bg">
-      <div className="footer container">
+      <div className="container-principal footer container">
         <div className="flex justify-between flex-wrap gap-2">
           <div className="footer-informacoes">
             <h3>Equipe</h3>
@@ -47,7 +47,7 @@ export default function Footer() {
             <h3>Redes Sociais</h3>
             <ul className="redes">
               <li>
-                <img src="img/instagram.svg" alt="Instagram" />
+                <img src="/img/instagram.svg" alt="Instagram" />
                 <Link href="https://www.instagram.com/cactus_cz/" target="_blank">
                   @cactus_cz
                 </Link>
@@ -59,13 +59,13 @@ export default function Footer() {
             <h3>Contato</h3>
             <ul className="redes">
               <li>
-                <img src="img/zapIcon.png" alt="whatsapp" />
+                <img src="/img/zapIcon.png" alt="whatsapp" />
                 <Link href="//wa.me/558388155741" target="_blank">
                   +55 (83) 98815-5741
                 </Link>
               </li>
               <li>
-                <img src="img/email.svg" alt="email" />
+                <img src="/img/email.svg" alt="email" />
                 <Link href="mailto:cactus.cz@ifpb.edu.br">cactus.cz@ifpb.edu.br</Link>
               </li>
             </ul>
@@ -84,12 +84,12 @@ export default function Footer() {
         <hr />
 
         <div className="footer-bottom">
-          <img className="logo" src="img/CactusLogo.png" alt="Cactus" />
+          <img className="logo" src="/img/CactusLogo.png" alt="Cactus" />
 
           <Link href="https://loopisjr.github.io/">www.loopisjr.com.br</Link>
 
           <a href="#" className="flex items-center gap-1">
-            <img src="img/seta.svg" alt="seta" />
+            <img src="/img/seta.svg" alt="seta" />
             <span>Voltar ao topo</span>
           </a>
         </div>
