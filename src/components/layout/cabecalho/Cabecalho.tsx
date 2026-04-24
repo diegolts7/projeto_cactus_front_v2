@@ -2,6 +2,8 @@
 import Link from "next/link";
 import "./cabecalho.css";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
+import CactusLogo from "@/public/img/CactusLogo.png";
 
 export default function Cabecalho() {
   const pathName = usePathname();
@@ -22,7 +24,7 @@ export default function Cabecalho() {
     <header className={`${paletaCoresConformePath.headerClass} transition-colors`}>
       <div className="container-principal nav-bar">
         <Link href="/" className="logo">
-          <img src="/img/CactusLogo.png" alt="Logo Cactus" className="logo-img" />
+          <Image src={CactusLogo} alt="Logo Cactus" className="logo-img" priority />
         </Link>
         <nav>
           <ul className="lista-nav">

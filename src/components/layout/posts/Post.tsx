@@ -10,7 +10,7 @@ export default function Post({ post, onClickEvent }: PostProps) {
   return (
     <article
       key={post.id}
-      className="bg-background border-2 border-border rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 transform cursor-pointer"
+      className="bg-background border-2 border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 transition-normal transform cursor-pointer"
       title={post.title}
       onClick={() => (onClickEvent ? onClickEvent(post.id) : {})}
     >

@@ -1,13 +1,19 @@
 import FormContato from "./_components/form_contato/_formContato";
 import Projetos from "./_components/projetos/_projetos";
 import "./home.css";
+import Image from "next/image";
+import CactusApresentacao from "@/public/img/CactusApresentacao.png";
+import ArvoresIcon from "@/public/img/arvoresIcon.png";
+import InfraIcon from "@/public/img/infraIcon.png";
+import InovacaoIcon from "@/public/img/inovacaoIcon.png";
+import EstudanteIcon from "@/public/img/estudanteIcon.png";
 
 export default function Home() {
   return (
     <main className="font-[ErasBold,Arial]">
       <section className="apresentacao" id="apresentacao">
         <div className="flex justify-center">
-          <img src="/img/CactusApresentacao.png" alt="Apresentação Cactus" className="cactus-apresentacao" />
+          <Image src={CactusApresentacao} alt="Apresentação Cactus" className="cactus-apresentacao" />
         </div>
         <h2>Construindo com a terra, crescendo com a comunidade</h2>
         <h3>
@@ -21,7 +27,7 @@ export default function Home() {
         <p>Conheça as nossas áreas de atuação e especialidades</p>
         <div className="especialidades" id="especialidades">
           <div className="especialidade">
-            <img src="/img/arvoresIcon.png" alt="icone de arvores" />
+            <Image src={ArvoresIcon} alt="icone de arvores" className="especialidade-icon" />
             <span className="tituloCard"> Agroecologia </span>
             <p>
               Planejamento de espaços produtivos com base na permacultura, promovendo diversidade, cuidado com a água e
@@ -29,7 +35,7 @@ export default function Home() {
             </p>
           </div>
           <div className="especialidade">
-            <img src="/img/infraIcon.png" alt="icone de pilha de Infraestrutura" />
+            <Image src={InfraIcon} alt="icone de pilha de Infraestrutura" className="especialidade-icon" />
             <span className="tituloCard">Bioconstrução</span>
             <p>
               Assistência técnica para famílias urbanas e rurais de baixa renda construírem ou reformarem moradias
@@ -37,7 +43,7 @@ export default function Home() {
             </p>
           </div>
           <div className="especialidade">
-            <img src="/img/inovacaoIcon.png" alt="icone de inovação" />
+            <Image src={InovacaoIcon} alt="icone de inovação" className="especialidade-icon" />
             <span className="tituloCard">Economia Solidária</span>
             <p>
               Apoio a grupos e comunidades na organização de arranjos produtivos locais, fortalecendo cooperação,
@@ -55,7 +61,7 @@ export default function Home() {
 
         <div className="objetivos-container">
           <div className="objetivos-itens">
-            <img className="objetivo-icon" src="/img/estudanteIcon.png" alt="Icone de aluno" />
+            <Image src={EstudanteIcon} alt="Icone de aluno" className="objetivo-icon" />
             <p>
               Prestar assistência técnica e consultoria especializada ao IFPB, à comunidade local, entidades públicas e
               privadas;
@@ -63,19 +69,19 @@ export default function Home() {
           </div>
 
           <div className="objetivos-itens">
-            <img className="objetivo-icon" src="/img/estudanteIcon.png" alt="Icone de aluno" />
+            <Image src={EstudanteIcon} alt="Icone de aluno" className="objetivo-icon" />
             <p>
               Gerar, sistematizar e publicar material referente a estudos e pesquisas sobre desenvolvimento sustentável;
             </p>
           </div>
 
           <div className="objetivos-itens">
-            <img className="objetivo-icon" src="/img/estudanteIcon.png" alt="Icone de aluno" />
+            <Image src={EstudanteIcon} alt="Icone de aluno" className="objetivo-icon" />
             <p>Desenvolver programas de treinamento e desenvolvimento profissional;.</p>
           </div>
 
           <div className="objetivos-itens">
-            <img className="objetivo-icon" src="/img/estudanteIcon.png" alt="Icone de aluno" />
+            <Image src={EstudanteIcon} alt="Icone de aluno" className="objetivo-icon" />
             <p>Incentivar e viabilizar o desenvolvimento de pesquisas com potencial inovador;</p>
           </div>
         </div>
