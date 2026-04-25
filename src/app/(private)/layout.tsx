@@ -1,5 +1,4 @@
-import Cabecalho from "@/src/components/layout/cabecalho/normal/Cabecalho";
-import Footer from "@/src/components/layout/footer/Footer";
+import CabecalhoAdmin from "@/src/components/layout/cabecalho/admin/CabecalhoAdmin";
 
 export default function AppLayout({
   children,
@@ -9,11 +8,9 @@ export default function AppLayout({
   return (
     <div className="flex flex-col ">
       <div className="min-h-screen">
-        <Cabecalho />
+        <CabecalhoAdmin />
         <main>{children}</main>
       </div>
-
-      <Footer />
     </div>
   );
 }

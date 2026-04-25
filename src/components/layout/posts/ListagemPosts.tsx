@@ -3,6 +3,8 @@ import { useCallback, useMemo, useState } from "react";
 import ButtonCustom from "../../ui/button/Button";
 import Post from "./Post";
 import Posts from "@/src/data/posts.json";
+import EmptyCustom from "../../ui/empty/Empty";
+import { BlogPost } from "@/src/types/post.types";
 
 interface ListagemPostsProps {
   onClickPostEvent?: (id: string) => void;
@@ -13,13 +15,17 @@ const ITENS_PER_PAGE = 6;
 export default function ListagemPosts({ onClickPostEvent }: ListagemPostsProps) {
   const [visibleCount, setVisibleCount] = useState(ITENS_PER_PAGE);
 
-  const postsSemDescription = Posts.map((p) => ({
-    id: p.id,
-    title: p.title,
-    image: p.image,
-    category: p.category,
-    date: p.date,
-  }));
+  const postsSemDescription = useMemo(
+    () =>
+      Posts.map((p) => ({
+        id: p.id,
+        title: p.title,
+        image: p.image,
+        category: p.category,
+        date: p.date,
+      })),
+    [],
+  );
 
   const visiblePosts = useMemo(() => {
     return postsSemDescription.slice(0, visibleCount);
@@ -30,6 +36,10 @@ export default function ListagemPosts({ onClickPostEvent }: ListagemPostsProps) 
   const handleLoadMore = useCallback(() => {
     setVisibleCount((prev) => prev + ITENS_PER_PAGE);
   }, [setVisibleCount]);
+
+  if (!postsSemDescription.length) {
+    return <EmptyCustom title="Sem publicações" description="Aguarde o editor publicar postagens" size="lg" />;
+  }
 
   return (
     <section>
@@ -43,7 +53,7 @@ export default function ListagemPosts({ onClickPostEvent }: ListagemPostsProps) 
         <div className="w-full flex justify-center">
           <ButtonCustom
             onClick={handleLoadMore}
-            className="bg-primary w-fit"
+            className="bg-primary w-fit hover:bg-primary/80 transition-all duration-300"
             size="md"
             title="Clique para ver mais postagens"
           >

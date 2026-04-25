@@ -21,10 +21,18 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.container-principal {
-  max-width: 1200px;
+.container-principal,
+.container-menor {
   margin: 0 auto;
   width: 100%;
+}
+
+.container-principal {
+  max-width: 1200px;
+}
+
+.container-menor {
+  max-width: 900px;
 }
 
 @layer base {

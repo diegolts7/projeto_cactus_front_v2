@@ -30,7 +30,7 @@ export default function Login() {
     const token = "abcd";
     document.cookie = `token=${token}; path=/; max-age=86400`;
 
-    router.push("/admin");
+    router.replace("/admin");
   };
 
   return (

@@ -90,7 +90,7 @@ export default function Footer() {
         <hr />
 
         <div className="footer-bottom">
-          <Image src={CactusLogo} alt="Cactus" className="logo" />
+          <Image src={CactusLogo} alt="Cactus" className="logo" priority />
 
           <Link href="https://loopisjr.github.io/">www.loopisjr.com.br</Link>
 
