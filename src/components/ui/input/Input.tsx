@@ -9,6 +9,7 @@ interface InputCustomProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "
   icon?: React.ReactNode;
   size?: "sm" | "md" | "lg";
   label?: React.ReactNode;
+  classNameContainer?: string;
 }
 
 export default function InputCustom({
@@ -18,6 +19,7 @@ export default function InputCustom({
   icon,
   size = "md",
   label,
+  classNameContainer = "",
   ...props
 }: InputCustomProps) {
   const [showPassword, setShowPassword] = useState(false);
@@ -46,7 +48,7 @@ export default function InputCustom({
       )}
 
       <InputGroup
-        className={`w-full bg-orange-50 border-orange-200 text-gray-800 focus-within:ring-2 focus-within:ring-orange-500 transition-all ${sizes[size]}`}
+        className={`w-full bg-orange-50 border-orange-200 text-gray-800 focus-within:ring-2 focus-within:ring-orange-500 transition-all ${sizes[size]} ${classNameContainer}`}
       >
         {icon && <InputGroupAddon align="inline-start">{icon}</InputGroupAddon>}
 

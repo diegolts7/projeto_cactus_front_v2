@@ -1,4 +1,6 @@
 import { BlogPost } from "@/src/types/post.types";
+import DOMPurify from "isomorphic-dompurify";
+import "./leituraPost.css";
 
 interface LeituraPostProps {
   post: BlogPost;
@@ -15,7 +17,12 @@ export default function LeituraPost({ post }: LeituraPostProps) {
         {post.category} • {post.date}
       </p>
 
-      <p className="text-gray-700 leading-relaxed">{post.description}</p>
+      <div
+        className="editor-content prose text-gray-700"
+        dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize(post.description),
+        }}
+      />
     </section>
   );
 }

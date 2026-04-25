@@ -22,7 +22,7 @@ export default function MenuAdmin() {
 
   const handleLogout = () => {
     document.cookie = "token=; Max-Age=0; path=/";
-    router.replace("/login");
+    router.replace("/");
   };
 
   return (
