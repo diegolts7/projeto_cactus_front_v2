@@ -3,13 +3,18 @@
 import ButtonCustom from "@/src/components/ui/button/Button";
 import { ChevronLeft } from "lucide-react";
 
-export default function BackButton() {
+interface BackButtonProps {
+  title?: string;
+  onClick?: () => void;
+}
+
+export default function BackButton({ title = "Voltar para a pagina anterior", onClick }: BackButtonProps) {
   return (
     <ButtonCustom
       variant="outline"
       className="w-fit rounded-sm border border-primary text-primary hover:bg-primary/20 transition-all duration-300"
-      title="Voltar para o blog"
-      onClick={() => window.history.back()}
+      title={title}
+      onClick={() => onClick || window.history.back()}
     >
       <ChevronLeft /> Voltar
     </ButtonCustom>

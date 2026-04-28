@@ -8,9 +8,10 @@ const TEditor = dynamic(() => import("@tinymce/tinymce-react").then((mod) => mod
 interface EditorProps {
   initialValue?: string;
   onEditorChange?: (content: string) => void;
+  style?: string;
 }
 
-export default function Editor({ initialValue = "", onEditorChange }: EditorProps) {
+export default function Editor({ initialValue = "", onEditorChange, style = "" }: EditorProps) {
   const editorRef = useRef(null);
 
   return (
@@ -38,6 +39,7 @@ export default function Editor({ initialValue = "", onEditorChange }: EditorProp
         ],
         toolbar:
           "undo preview | blocks | bold italic | fontfamily fontsize | alignleft aligncenter alignright | bullist numlist",
+        content_style: style,
       }}
     />
   );
